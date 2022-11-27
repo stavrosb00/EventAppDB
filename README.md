@@ -1,5 +1,3 @@
-# EventAppDB
-ECE AUTh Data Bases Course Project
 
 <div id="top"></div>
 
