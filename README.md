@@ -7,7 +7,7 @@
   <h3 align="center">Aristotle University of Thessaloniki</h3>
   <h4 align="center">School of Electrical & Computer Engineering</h4>
   <p align="center">
-    Contributors:  Vasileios Evaggelopoulos, Nikolaos Giannopoulos, Stavros Vasileios Bouliopoulos
+    Contributors:  Vasileios Evaggelopoulos, Stavros Vasileios Bouliopoulos, Nikolaos Giannopoulos
     <br />
     Winter Semester 2022 - 2023
     <br />
