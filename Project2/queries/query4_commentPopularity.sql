@@ -1,0 +1,29 @@
+DROP TABLE IF EXISTS TEMP_A;
+CREATE TABLE TEMP_A
+SELECT event.eventID, post.postID
+FROM event JOIN post on event.eventID = post.eventID 
+           JOIN comment on post.postID = comment.postID;
+
+DROP TABLE IF EXISTS TEMP_B;
+CREATE TABLE TEMP_B
+SELECT eventID, COUNT(*) as commentsTotal 
+FROM TEMP_A
+GROUP BY eventID
+ORDER BY postID;
+
+DROP TABLE IF EXISTS TEMP_C;
+CREATE TABLE TEMP_C
+SELECT eventID from event
+WHERE eventID NOT IN (SELECT eventID from TEMP_B);
+ALTER TABLE TEMP_C
+ADD commentsTotal REAL DEFAULT 0;
+
+SELECT *
+FROM TEMP_B
+UNION 
+SELECT *
+FROM TEMP_C;
+
+DROP TABLE TEMP_A;
+DROP TABLE TEMP_B;
+DROP TABLE TEMP_C;
